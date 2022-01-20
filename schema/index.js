@@ -1,3 +1,4 @@
+/* eslint-disable arrow-body-style */
 // Import type helpers from graphql-js
 const {
   GraphQLSchema,
@@ -7,6 +8,7 @@ const {
 } = require('graphql');
 
 const UserType = require('./types/user');
+const pgdb = require('../database/pgdb');
 
 // The root query type is where in the data graph
 // we can start asking questions
@@ -25,8 +27,8 @@ const RootQueryType = new GraphQLObjectType({
       args: {
         key: { type: new GraphQLNonNull(GraphQLString) },
       },
-      resolve: () => {
-        // Read user information from database
+      resolve: (obj, args, { pgPool }) => {
+        return pgdb(pgPool).getUser(args.key);
       },
     },
   },
