@@ -1,0 +1,24 @@
+{
+  "name": "name-contests-api",
+  "version": "1.0.0",
+  "description": "Name contests API",
+  "author": "JuMaLaB",
+  "license": "ISC",
+  "scripts": {
+    "start": "node lib/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuMaLaB/graphql-demo.git"
+  },
+  "keywords": [
+    "graphql"
+  ],
+  "dependencies": {
+    "mongodb": "^2.1.18",
+    "pg": "^6.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.9.2"
+  }
+}
