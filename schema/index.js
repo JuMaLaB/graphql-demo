@@ -27,7 +27,7 @@ const RootQueryType = new GraphQLObjectType({
         key: { type: new GraphQLNonNull(GraphQLString) },
       },
       resolve: (obj, args, { pgPool }) => {
-        return pgdb(pgPool).getUser(args.key);
+        return pgdb(pgPool).getUserByApiKey(args.key);
       },
     },
   },
