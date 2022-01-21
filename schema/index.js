@@ -1,4 +1,3 @@
-/* eslint-disable arrow-body-style */
 // Import type helpers from graphql-js
 const {
   GraphQLSchema,
@@ -19,7 +18,7 @@ const RootQueryType = new GraphQLObjectType({
     hello: {
       type: GraphQLString,
       description: 'The *mandatory* hello world example, GraphQL style',
-      resolve: () => 'world !!!',
+      resolve: () => { return 'world !!!'; },
     },
     user: {
       type: UserType,
