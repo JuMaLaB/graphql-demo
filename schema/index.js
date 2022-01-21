@@ -7,7 +7,6 @@ const {
 } = require('graphql');
 
 const UserType = require('./types/user');
-const pgdb = require('../database/pgdb');
 
 // The root query type is where in the data graph
 // we can start asking questions
@@ -26,8 +25,8 @@ const RootQueryType = new GraphQLObjectType({
       args: {
         key: { type: new GraphQLNonNull(GraphQLString) },
       },
-      resolve: (obj, args, { pgPool }) => {
-        return pgdb(pgPool).getUserByApiKey(args.key);
+      resolve: (obj, args, { loaders }) => {
+        return loaders.usersByApiKeys.load(args.key);
       },
     },
   },
