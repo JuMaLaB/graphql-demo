@@ -77,3 +77,19 @@ mutation PorposeName($input: NameInput!) {
     "description": "..."
   }
 }
+####
+{
+  user(key: "4242") {
+    fullName
+    email
+    activities {
+      ... on Contest {
+        
+        header: title
+      }
+      ... on Name {
+        header: label        
+      }
+    }
+  }
+}
