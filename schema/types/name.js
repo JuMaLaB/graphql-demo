@@ -1,4 +1,3 @@
-/* eslint-disable global-require */
 const {
   GraphQLObjectType,
   GraphQLID,
@@ -7,7 +6,7 @@ const {
 } = require('graphql');
 
 module.exports = new GraphQLObjectType({
-  name: 'NameType',
+  name: 'Name',
 
   fields: () => {
     const UserType = require('./user');

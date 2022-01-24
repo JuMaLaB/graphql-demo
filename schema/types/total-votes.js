@@ -4,7 +4,7 @@ const {
 } = require('graphql');
 
 module.exports = new GraphQLObjectType({
-  name: 'TotalVotesType',
+  name: 'TotalVotes',
 
   fields: () => {
     return {
