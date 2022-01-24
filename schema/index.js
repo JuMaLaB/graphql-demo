@@ -33,6 +33,7 @@ const RootQueryType = new GraphQLObjectType({
 });
 
 const AddContestMutation = require('./mutations/add-contest');
+const AddNameMutation = require('./mutations/add-name');
 
 const RootMutationType = new GraphQLObjectType({
   name: 'RootMutationType',
@@ -40,7 +41,7 @@ const RootMutationType = new GraphQLObjectType({
   fields: () => {
     return {
       AddContest: AddContestMutation,
-      // AddName: AddNameMutation
+      AddName: AddNameMutation,
     };
   },
 });
